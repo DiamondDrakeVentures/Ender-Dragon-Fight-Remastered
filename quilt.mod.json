@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "quilt_loader": {
+    "group": "co.diamonddrake",
+    "id": "endfight",
+    "version": "{version}",
+    "metadata": {
+      "name": "Ender Dragon Fight Remastered: Create(D) Edition",
+      "description": "A difficulty increase of Minecraft's final boss, with a focus on a somewhat Vanilla feel.",
+      "contributors": {
+        "MrGenie151": "Author",
+        "Diamond Drake Ventures": "Backporting to 1.21 - 1.21.6"
+      },
+      "icon": "pack.png"
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "versions": ">=0.19.1"
+      }
+    ]
+  }
+}

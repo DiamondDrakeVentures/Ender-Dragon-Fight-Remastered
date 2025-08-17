@@ -1,0 +1,40 @@
+name: Pack the datapack
+on:
+  push:
+    paths-ignore:
+      - README.md
+  pull_request:
+    paths-ignore:
+      - README.md
+  workflow_dispatch:
+  schedule:
+    - cron: "15 0 1 * *"
+env:
+  VERSION_ID: "5.0.0"
+  COMMIT_HASH_FULL: ${{ github.sha }}
+  BASE_ARCHIVE_NAME: edfr-created-{0}-{1}
+
+jobs:
+  pack:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Setup variable
+        run: |
+          SHORT=$(git rev-parse --short $COMMIT_HASH_FULL)
+          echo "COMMIT_HASH=$SHORT" >> $GITHUB_ENV
+      - name: Inject version number
+        run: |
+          sed -i "s/{version}/$VERSION_ID-$COMMIT_HASH/g" META-INF/neoforge.mods.toml
+          sed -i "s/{version}/$VERSION_ID-$COMMIT_HASH/g" fabric.mod.json
+          sed -i "s/{version}/$VERSION_ID-$COMMIT_HASH/g" quilt.mod.json
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ format(env.BASE_ARCHIVE_NAME, env.VERSION_ID, env.COMMIT_HASH) }}
+          if-no-files-found: error
+          path: |
+            ${{ github.workspace }}/*
+            !${{ github.workspace }}/*.git*

@@ -1,0 +1,13 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "GPL-3.0-only"
+showAsResourcePack = false
+
+[[mods]]
+modId = "endfight"
+version = "{version}"
+displayName = "Ender Dragon Fight Remastered: Create(D) Edition"
+description = "A difficulty increase of Minecraft's final boss, with a focus on a somewhat Vanilla feel."
+logoFile = "pack.png"
+credits = "Backported to 1.21 - 1.21.6 by Diamond Drake Ventures"
+authors = "MrGenie151"

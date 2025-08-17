@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1",
+  "id": "endfight",
+  "version": "{version}",
+  "name": "Ender Dragon Fight Remastered: Create(D) Edition",
+  "description": "A difficulty increase of Minecraft's final boss, with a focus on a somewhat Vanilla feel.",
+  "authors": [
+    "MrGenie151"
+  ],
+  "contributors": [
+    "Diamond Drake Ventures"
+  ],
+  "license": "GPL-3.0-only",
+  "icon": "pack.png",
+  "environment": "*",
+  "depends": {
+    "fabric-resource-loader-v0": "*"
+  }
+}

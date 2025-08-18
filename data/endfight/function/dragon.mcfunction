@@ -58,3 +58,5 @@ execute if entity @s[tag=MAD] at @s run particle portal ~ ~ ~ 3 3 3 1 50 force
 
 #miniboss check
 execute if entity @e[tag=miniboss] run tp 0 100 0
+execute if entity @e[tag=miniboss] run data merge entity @s {Invulnerable: 1b}
+execute unless entity @e[tag=miniboss] run data merge entity @s {Invulnerable: 0b}

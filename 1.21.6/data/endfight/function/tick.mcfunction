@@ -11,6 +11,7 @@ tag @e[type=minecraft:end_crystal,tag=!crystalInit] add crystalInit
 execute as @e[tag=endZombie] at @s unless block ~ ~ ~ air run tp ~ ~1 ~
 execute as @e[tag=endZombie] at @s if entity @e[type=minecraft:arrow,distance=..3] run tp ^1 ^ ^
 execute as @e[tag=endZombie,type=zombie] run effect give @s slow_falling 1 0 true
+execute unless entity @e[tag=ticked] run function endfight:killads
 
 # Stop the music if the Ender Dragon is dead
 execute unless entity @e[tag=ticked] run scoreboard players reset * musicTimer
